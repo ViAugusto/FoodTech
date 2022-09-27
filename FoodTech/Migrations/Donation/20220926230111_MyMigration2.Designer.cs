@@ -3,14 +3,16 @@ using System;
 using FoodTech.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodTech.Migrations.Donation
 {
     [DbContext(typeof(DonationContext))]
-    partial class DonationContextModelSnapshot : ModelSnapshot
+    [Migration("20220926230111_MyMigration2")]
+    partial class MyMigration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

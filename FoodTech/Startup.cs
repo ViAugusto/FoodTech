@@ -37,9 +37,6 @@ namespace FoodTech
             services.AddDbContext<DonationContext>(opts =>
                 opts.UseMySQL(Configuration.GetConnectionString("DonationConnection")
                 ));
-            services.AddDbContext<DonationContext>(opts =>
-                opts.UseMySQL(Configuration.GetConnectionString("EnderecoConnection")
-                ));
             services.AddDbContext<UsuarioContext>(opts =>
                 opts.UseMySQL(Configuration.GetConnectionString("UsuarioConnection")
                 ));
@@ -48,6 +45,7 @@ namespace FoodTech
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FoodTech", Version = "v1" });
             });
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
